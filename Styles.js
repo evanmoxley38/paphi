@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
     mapStyle:{
       width: 400,
       height: 400,
+    },
+    mapContainer:{
+      flex:1,
+      justifyContent: 'center',
+      alignItems: 'center',
     }
   }); 
 
