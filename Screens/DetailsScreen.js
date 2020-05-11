@@ -8,8 +8,6 @@ import map from "../Info/Map.js";
 
 //Style Imports
 import styles from "../Styles.js";
-import MapView from "react-native-maps";
-
 
 export default function DetailsScreen({navigation, route}){
     let temp = route.params.crossing.split(" ")
@@ -17,7 +15,7 @@ export default function DetailsScreen({navigation, route}){
   
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.innterContainer}>
+        <View style={styles.innerContainer}>
             <Image source={People[index].image} style={styles.image}/>
         </View>
         <Text style={styles.header}> {People[index].lineNumber}     {People[index].name}  </Text>
@@ -26,9 +24,6 @@ export default function DetailsScreen({navigation, route}){
         <Text style={styles.detailsText}>  {People[index].crossing} {People[index].date} </Text>
         <Text style={styles.detailsText}>  {People[index].grade} </Text>
         <Text style={styles.detailsText}>  {People[index].major} </Text>
-        {/* <View>
-          <MapView style={styles.mapStyle}></MapView>
-        </View> */}
       </ScrollView>
     )
   }
