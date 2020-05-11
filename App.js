@@ -1,10 +1,10 @@
 import React from "react";
-import {Text, View, SafeAreaView, SectionList, TouchableOpacity} from "react-native";
+import {Text, View, SafeAreaView, SectionList, TouchableOpacity, Button} from "react-native";
+import MapView from 'react-native-maps';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {MapView} from 'react-native-maps';
 
 //Info Imports
 import Roster from "./Info/Roster.js";
@@ -15,7 +15,6 @@ import styles from "./Styles.js";
 
 // //Screen Imports
 import DetailsScreen from './Screens/DetailsScreen.js';
-
 
 const Item = ({ crossing, navigation}) => (
   <View style={styles.item}>
@@ -77,11 +76,11 @@ const FullStack = createStackNavigator()
 const ActiveStack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
-
-function NationScreen(){
+function MapScreen(){
   return(
-    <View>
-      <MapView style={styles.mapStyle}> </MapView>
+    <View style={styles.container}>
+      <Button title="Click to open fucking map"/>
+      <MapView style={styles.mapStyle}></MapView>
     </View>
   )
 }
@@ -112,13 +111,12 @@ class App extends React.Component{
         }}> 
           <Tab.Screen name="Active House" component={ActiveHouseStack} />
           <Tab.Screen name="Full Roster" component={FullRosterStack} />
-          <Tab.Screen name="Map" component={NationScreen}/>
+          <Tab.Screen name="Map" component={MapScreen}/>
         </Tab.Navigator>
       </NavigationContainer>
   
     );
   } 
 }
-
 export default App;
 
