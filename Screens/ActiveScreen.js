@@ -13,6 +13,7 @@ import styles from "../Styles.js";
 import DetailsScreen from './DetailsScreen.js';
 import Item from './ItemComponent.js'
 
+//Shows all Active members 
 function ActiveHouse({navigation}){
     return(
       <SafeAreaView style={styles.container}>
@@ -30,8 +31,8 @@ function ActiveHouse({navigation}){
 export default function ActiveHouseStack(){
   return(
     <ActiveStack.Navigator>
-      <ActiveStack.Screen name="Active House" component={ActiveHouse} />
-      <ActiveStack.Screen name="Information" component={DetailsScreen} />
+      <ActiveStack.Screen name="Active House" component={ActiveHouse} options={{title: "Current Actives"}} />
+      <ActiveStack.Screen name="Information" component={DetailsScreen} options={{headerShown: false}}/>
     </ActiveStack.Navigator>
   )
 }

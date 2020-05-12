@@ -1,22 +1,25 @@
 import React from "react";
 import {SafeAreaView, View, Text} from "react-native";
 import MapView from 'react-native-maps';
+import {createStackNavigator} from '@react-navigation/stack';
 
 //Style Imports
 import styles from "../Styles.js";
 
+//Screen Imports
+import MapDetails from "./MapDetails.js"
 
-export default function MapScreen(){
+//Screen that renders the map with all its points
+function MapScreen({navigation}){
     return(
         <SafeAreaView style={styles.mapContainer}>
-            <View style={{justifyContent: 'center', alignItems: 'center', marginTop: 50}}>
+            <View style={{justifyContent: 'center', alignItems: 'center', marginTop: 30}}>
                 <Text style={{fontSize: 15, fontWeight: 'bold'}}> BROTHERHOOD</Text>
                 <Text style={{fontSize: 20, fontWeight: 'bold', color: "blue"}}>PI ALPHA PHI FRATERNITY INC</Text>
             </View>
             <View style={{flex: 1, marginTop: 25,}}>
-                
                 <MapView style={styles.mapStyle}>
-                <MapView.Marker coordinate={{latitude: 34.6834, longitude: -82.8347}} title= "Chi Chapter - Clemson University" pinColor="orange"/>
+                <MapView.Marker coordinate={{latitude: 34.6834, longitude: -82.8347}} title= "Chi Chapter - Clemson University" pinColor="orange" onCalloutPress={() => {navigation.navigate("Map Details")}}/>
                 <MapView.Marker coordinate={{latitude: 37.8719, longitude: -122.2585}} title= "Alpha Chapter - UC Berkeley" pinColor="#7cfc00"/>
                 <MapView.Marker coordinate={{latitude: 40.9124, longitude: -73.1234}} title= "Beta Chapter - Stony Brook University" pinColor="#dc143c"/>
                 <MapView.Marker coordinate={{latitude: 38.5382, longitude: -121.7617}} title= "Gamma Chapter - UC Davis" pinColor="#dc143c"/>
@@ -50,4 +53,14 @@ export default function MapScreen(){
         </SafeAreaView>
       
     )
+}
+export default function MapScreenStack(){
+    return(
+      <MapStack.Navigator>
+        <MapStack.Screen name="Map Screen" component={MapScreen} options={{headerShown: false}}/>
+        <MapStack.Screen name="Map Details" component={MapDetails} options={{headerShown: false}} />
+      </MapStack.Navigator>
+    )
   }
+  
+const MapStack = createStackNavigator()

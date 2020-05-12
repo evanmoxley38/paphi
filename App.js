@@ -1,17 +1,16 @@
 import React from "react";
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // //Screen Imports
-import MapScreen from './Screens/MapScreen.js';
+import MapScreenStack from './Screens/MapScreen.js';
 import ActiveHouseStack from './Screens/ActiveScreen.js';
 import FullRosterStack from './Screens/RosterScreen.js';
 
-const FullStack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
+//Main class for the app
 class App extends React.Component{
   render(){
     return(
@@ -29,8 +28,6 @@ class App extends React.Component{
             } else if (route.name === 'Map'){
               iconName = focused ? 'ios-map' : 'ios-map';
             }
-
-            // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
@@ -38,7 +35,7 @@ class App extends React.Component{
           activeTintColor: 'blue',
           inactiveTintColor: 'gray',
         }}> 
-          <Tab.Screen name="Map" component={MapScreen}/>
+          <Tab.Screen name="Map" component={MapScreenStack}/>
           <Tab.Screen name="Active House" component={ActiveHouseStack} />
           <Tab.Screen name="Full Roster" component={FullRosterStack} />
           

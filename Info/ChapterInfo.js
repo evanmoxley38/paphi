@@ -1,0 +1,6 @@
+const ChapterInfo = [
+    {
+        name: "Clemson"
+    }
+
+]

@@ -13,6 +13,7 @@ import styles from "../Styles.js";
 import DetailsScreen from './DetailsScreen.js';
 import Item from './ItemComponent.js';
 
+//Shows all past and present members on the roster
 function FullRoster({navigation}){
     return(
       <SafeAreaView style={styles.container}>
@@ -32,8 +33,8 @@ function FullRoster({navigation}){
 export default function FullRosterStack(){
 return(
     <FullStack.Navigator>
-    <FullStack.Screen name="Full Roster" component={FullRoster} />
-    <FullStack.Screen name="Information" component={DetailsScreen} />
+      <FullStack.Screen name="Full Roster" component={FullRoster} options={{title: "Role Call"}}/>
+      <FullStack.Screen name="Information" component={DetailsScreen} options={{headerShown: false}}/>
     </FullStack.Navigator>
 );
 }

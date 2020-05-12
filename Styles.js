@@ -2,9 +2,15 @@ import {StyleSheet, Dimensions} from 'react-native'
 import Constants from "expo-constants";
 
 const styles = StyleSheet.create({
+    //Styles for lists and details screens
     container: {
       flex: 1,
       marginHorizontal: 16,
+    },
+    detailsContainer:{
+      flex: 1,
+      marginHorizontal: 16,
+      marginTop: 50
     },
     innerContainer:{
         flex: .7,
@@ -23,15 +29,18 @@ const styles = StyleSheet.create({
     names: {
       fontSize: 20
     },
-    //image for the details scree 
+    //image for the details screen
     image:{
       width: 300,
       height: 300,
       resizeMode: 'cover',
+      borderColor: 'blue',
+      borderWidth: 3,
     },
     detailsText:{
       fontSize: 20,
     },
+    //styles for map
     mapStyle:{
       width: Dimensions.get('window').width,
       height: Dimensions.get('window').height,
