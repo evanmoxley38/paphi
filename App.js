@@ -29,7 +29,7 @@ class App extends React.Component{
             } else if (route.name === 'Map'){
               iconName = focused ? 'ios-map' : 'ios-map';
             } else if (route.name === 'About'){
-              iconName = focused ? 'ios-info' : 'ios-info';
+              iconName = focused ? 'ios-information-circle' : 'ios-information-circle';
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },

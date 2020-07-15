@@ -10,7 +10,7 @@ export default function MapDetails(){
                 <Text style={{fontSize: 40, fontWeight: 'bold'}}> Chi Chapter</Text>
             </View>
             <View>
-                <Image source={require('../Images/housepic.png')} style={{width: 350, height: 250, borderColor: 'blue', borderWidth: 3}}/>
+                <Image source={require('../Images/housepic.png')} style={{width: 340, height: 250, borderColor: 'blue', borderWidth: 3}}/>
             </View>
             <View style={{flex: 1, marginTop: 20}}>
                 <Text style ={styles.names}> School: Clemson University</Text>

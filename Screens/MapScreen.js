@@ -13,11 +13,11 @@ import MapDetails from "./MapDetails.js"
 function MapScreen({navigation}){
     return(
         <SafeAreaView style={styles.mapContainer}>
-            <View style={{justifyContent: 'center', alignItems: 'center', marginTop: 30}}>
-                <Text style={{fontSize: 15, fontWeight: 'bold'}}> BROTHERHOOD</Text>
-                <Text style={{fontSize: 20, fontWeight: 'bold', color: "blue"}}>PI ALPHA PHI FRATERNITY INC</Text>
+            <View style={{justifyContent: 'center', alignItems: 'center',}}>
+                <Text style={{fontSize: 40, fontWeight: 'bold'}}> Home</Text>
+                <Text style={{fontSize: 20, fontWeight: 'bold', color: "#1e90ff"}}>PI ALPHA PHI FRATERNITY INC.</Text>
             </View>
-            <View style={{flex: 1, marginTop: 25,}}>
+            <View style={{marginTop: 25, alignItems: 'center'}}>
                 <MapView style={styles.mapStyle}>
                 <MapView.Marker coordinate={{latitude: 34.6834, longitude: -82.8347}} title= "Chi Chapter - Clemson University" pinColor="orange" onCalloutPress={() => {navigation.navigate("Map Details")}}/>
                 <MapView.Marker coordinate={{latitude: 37.8719, longitude: -122.2585}} title= "Alpha Chapter - UC Berkeley" pinColor="#7cfc00"/>
@@ -35,7 +35,7 @@ function MapScreen({navigation}){
                 <MapView.Marker coordinate={{latitude: 47.6555, longitude: -122.3032}} title= "Xi Chapter - University of Washington" pinColor="#7cfc00"/>
                 <MapView.Marker coordinate={{latitude: 34.4140, longitude: -119.8489}} title= "Omicron Chapter - UC Santa Barbara" pinColor="#7cfc00"/>
                 <MapView.Marker coordinate={{latitude: 41.6627, longitude: -91.5549}} title= "Pi Chapter - University of Iowa" pinColor="#7cfc00"/>
-                <MapView.Marker coordinate={{latitude: 35.2271, longitude: -80.8431}} title= "Rho Chapter - UNC Charlotte" pinColor="#7cfc00"/>
+                <MapView.Marker coordinate={{latitude: 35.2271, longitude: -80.8431}} title= "Rho Chapter - UNC Charlotte" pinColor="#dc143c"/>
                 <MapView.Marker coordinate={{latitude: 42.0559, longitude: -87.6751}} title= "Sigma Chapter - Northwestern University" pinColor="#dc143c"/>
                 <MapView.Marker coordinate={{latitude: 35.7847, longitude: -78.6821}} title= "Tau Chapter - NC State University" pinColor="#7cfc00"/>
                 <MapView.Marker coordinate={{latitude: 37.724, longitude: -122.4799}} title= "Upsilon Chapter - San Fransico State" pinColor="#dc143c"/>
@@ -49,6 +49,13 @@ function MapScreen({navigation}){
                 <MapView.Marker coordinate={{latitude: 36.0689, longitude: -79.8102}} title= "Colony Chapter - UNC at Greensboro" pinColor="#7cfc00"/>
         
                 </MapView>
+            </View>
+            <View style={{flex: 1, backgroundColor: '#1e90ff'}}>
+              <Text style={{fontSize: 20, fontWeight: 'bold'}}>Brotherhood Map</Text>
+              <Text style={{fontSize: 20, fontWeight: 'bold'}}>- Click pin for more details!</Text>
+              <Text style={{fontSize: 20, fontWeight: 'bold'}}>- Green = Active Chapter</Text>
+              <Text style={{fontSize: 20, fontWeight: 'bold'}}>- Red = Inactive Chapter</Text>
+              <Text style={{fontSize: 20, fontWeight: 'bold'}}>- Orange = Clemson!</Text>
             </View>
         </SafeAreaView>
       

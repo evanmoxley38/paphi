@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
     //styles for map
     mapStyle:{
       width: Dimensions.get('window').width,
-      height: Dimensions.get('window').height,
+      height: 450,
     },
     mapContainer:{
       flex:1,
-      backgroundColor: "#61dafb"
+      backgroundColor: "#fff8dc"
     }
   }); 
 
